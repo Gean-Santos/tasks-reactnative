@@ -1,4 +1,9 @@
-import { StyleSheet, Platform } from 'react-native';
+import { 
+  StyleSheet, 
+  Platform 
+} from 'react-native';
+
+import commonStyles from '../../commonStyles';
 
 export default StyleSheet.create({
   container:{

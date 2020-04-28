@@ -20,7 +20,7 @@ import Task from '../../components/Task';
 import AddTask from '../AddTask';
 import commonStyles from '../../commonStyles';
 
-import styles from 'styles';
+import styles from './styles';
 
 const initialState = {
   showDoneTasks: true,
