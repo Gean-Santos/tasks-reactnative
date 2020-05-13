@@ -26,4 +26,4 @@ Projeto elaborado a partir das aulas do curso: **React Native: Desenvolva APPs N
 
 ![tela3](https://user-images.githubusercontent.com/37232748/81771726-25f71880-94ba-11ea-9599-eb29cb862b4a.png)
 
->Tela de Nova Tarefa
+>Tela Inicial com exclusão de Tarefa
