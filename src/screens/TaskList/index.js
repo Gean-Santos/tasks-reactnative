@@ -14,8 +14,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
-import commonStyle from '../../commonStyles';
-import todayImage from '../../assets/imgs/today.jpg';
+import todayImage from '../../../assets/imgs/today.jpg';
 import Task from '../../components/Task';
 import AddTask from '../AddTask';
 import commonStyles from '../../commonStyles';
@@ -103,7 +102,7 @@ export default class TaskList extends Component {
           <View style={styles.iconBar}>
             <TouchableOpacity onPress={this.toggleFilter}>
               <Icon name={this.state.showDoneTasks ? 'eye' : 'eye-slash'} 
-                size={20} color={commonStyle.colors.secondary} />
+                size={20} color={commonStyles.colors.secondary} />
             </TouchableOpacity>
           </View>
           <View style={styles.titleBar}>
