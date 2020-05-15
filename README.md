@@ -27,3 +27,19 @@ Projeto elaborado a partir das aulas do curso: **React Native: Desenvolva APPs N
 ![tela3](https://user-images.githubusercontent.com/37232748/81771726-25f71880-94ba-11ea-9599-eb29cb862b4a.png)
 
 >Tela Inicial com exclusão de Tarefa
+
+#
+
+* Tela de Login: 
+
+![Tela4](https://user-images.githubusercontent.com/37232748/82099109-d8a6c100-96dc-11ea-9524-61be726840d3.png)
+
+>Tela de Login
+
+#
+
+* Tela de Cadastro: 
+
+![Tela5](https://user-images.githubusercontent.com/37232748/82099273-54087280-96dd-11ea-88e5-cba013827c8f.png)
+
+>Tela de Login
