@@ -1,6 +1,5 @@
 import { 
   StyleSheet,
-  Platform
  } from 'react-native';
 
 import commonStyles from '../../commonStyles';
@@ -33,13 +32,13 @@ export default StyleSheet.create({
   input: {
     marginTop: 10,
     backgroundColor: '#FFF',
-    padding: Platform.OS =='ios' ? 15 : 10,
   },
   button: {
     backgroundColor: '#080',
     marginTop: 10, 
     padding: 10,
     alignItems: 'center',
+    borderRadius: 7,
   },
   buttonText:{
     fontFamily: commonStyles.fontFamily,
