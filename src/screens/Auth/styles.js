@@ -18,8 +18,15 @@ export default StyleSheet.create({
     fontSize: 70,
     marginBottom: 10,
   },
+  subtitle: {
+    fontFamily: commonStyles.fontFamily,
+    color: '#FFF',
+    fontSize: 20,
+    textAlign: 'center',
+    marginBottom: 10,
+  },
   formContainer:{
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
     padding: 20,
     width: '90%',
   },
