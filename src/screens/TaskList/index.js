@@ -79,7 +79,7 @@ export default class TaskList extends Component {
       await axios.put(`${server}/taskToggle/${taskId}`);
       this.loadTasks();
     } catch (error) {
-      showError(error)
+      showError(error);
     }
   }
 
@@ -97,7 +97,7 @@ export default class TaskList extends Component {
 
       this.setState({ showAddTask: false }, this.loadTasks)
     } catch (error) {
-      showError(error)
+      showError(error);
     }
   }
 
@@ -106,7 +106,7 @@ export default class TaskList extends Component {
       await axios.delete(`${server}/tasks/${taskId}`);
       this.loadTasks();
     } catch (error) {
-      showError(error)
+      showError(error);
     }
   }
 
