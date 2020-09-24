@@ -36,7 +36,7 @@ export default StyleSheet.create({
   iconBar: {
     flexDirection: 'row',
     marginHorizontal: 20,
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     marginTop: Platform.OS === 'ios' ? 40 : 10,
   },
   addButton: {
@@ -46,7 +46,6 @@ export default StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: commonStyles.colors.today,
     justifyContent: 'center',
     alignItems: 'center',
   },
