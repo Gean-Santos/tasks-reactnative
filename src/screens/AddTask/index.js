@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { 
+import React, {Component} from 'react';
+import {
   Platform,
-  Modal, 
-  View, 
+  Modal,
+  View,
   Text,
   TouchableOpacity,
   TextInput,
-  TouchableWithoutFeedback, 
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 import moment from 'moment';
@@ -14,12 +14,11 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 
 import styles from './styles';
 
-const initialState = { desc: '',  date: new Date(), showDatePicker: false};
+const initialState = {desc: '', date: new Date(), showDatePicker: false};
 
 export default class AddTask extends Component {
-
   state = {
-    ...initialState
+    ...initialState,
   };
 
   save = () => {
@@ -29,52 +28,56 @@ export default class AddTask extends Component {
     };
 
     this.props.onSave && this.props.onSave(newTask);
-    this.setState({ ...initialState });
+    this.setState({...initialState});
   }
 
   getDatePicker = () => {
-    let datePicker =  <DateTimePicker value={this.state.date}
-      onChange={(_, date) => this.setState({ date, showDatePicker: false })} 
-      mode='date'/>;
+    let datePicker = (
+      <DateTimePicker
+        value={this.state.date}
+        onChange={(_, date) => this.setState({date, showDatePicker: false})}
+        mode="date"
+      />
+    );
+    const dateString = moment(this.state.date).format(
+      'dddd, D [de] MMMM [de] YYYY',
+    );
 
-      const dateString = moment(this.state.date).format('dddd, D [de] MMMM [de] YYYY');
+    if (Platform.OS === 'android') {
+      datePicker = (
+        <View>
+          <TouchableOpacity
+            onPress={() => this.setState({showDatePicker: true})}>
+            <Text style={styles.date}>{dateString}</Text>
+          </TouchableOpacity>
+          {this.state.showDatePicker && datePicker}
+        </View>
+      );
+    }
 
-      if(Platform.OS === 'android') {
-        datePicker = (
-          <View>
-            <TouchableOpacity onPress={() => this.setState({ showDatePicker: true })}>
-              <Text style={styles.date}>
-                {dateString}
-              </Text>
-            </TouchableOpacity>
-            {this.state.showDatePicker && datePicker}
-          </View>
-        )
-      }
-
-      return datePicker;
-  }
+    return datePicker;
+  };
 
   render() {
     return (
-      <Modal transparent={true} 
+      <Modal
+        transparent={true}
         visible={this.props.isVisible}
         onRequestClose={this.props.onCancel}
-        animationType='slide'>
-
-        <TouchableWithoutFeedback
-          onPress={this.props.onCancel}>
-          <View style={styles.background}></View>
+        animationType="slide">
+        <TouchableWithoutFeedback onPress={this.props.onCancel}>
+          <View style={styles.background} />
         </TouchableWithoutFeedback>
         <View style={styles.container}>
           <Text style={styles.header}>Nova Tarefa</Text>
-          <TextInput 
-            style={styles.input} 
+          <TextInput
+            style={styles.input}
             placeholder="Informe a descrição..."
             value={this.state.desc}
-            onChangeText={desc => this.setState({desc})}/>
-            {this.getDatePicker()}
-          <View style={styles.buttons}> 
+            onChangeText={desc => this.setState({desc})}
+          />
+          {this.getDatePicker()}
+          <View style={styles.buttons}>
             <TouchableOpacity onPress={this.props.onCancel}>
               <Text style={styles.button}>Cancel</Text>
             </TouchableOpacity>
@@ -83,11 +86,10 @@ export default class AddTask extends Component {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableWithoutFeedback
-          onPress={this.props.onCancel}>
-          <View style={styles.background}></View>
+        <TouchableWithoutFeedback onPress={this.props.onCancel}>
+          <View style={styles.background} />
         </TouchableWithoutFeedback>
       </Modal>
-    )
+    );
   }
 }
