@@ -29,7 +29,7 @@ export default class AddTask extends Component {
 
     this.props.onSave && this.props.onSave(newTask);
     this.setState({...initialState});
-  }
+  };
 
   getDatePicker = () => {
     let datePicker = (
