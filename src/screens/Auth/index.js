@@ -15,7 +15,7 @@ const initialState = {
   password: '123456',
   confirmPassword: '',
   stageNew: false,
-}
+};
 
 export default class Auth extends Component {
   state = {...initialState};
@@ -114,10 +114,7 @@ export default class Auth extends Component {
             />
           )}
           <TouchableOpacity onPress={this.signinOrSignup} disabled={!validForm}>
-            <View
-              style={[
-                styles.button,
-                validForm ? {} : {backgroundColor: '#AAA'}]}>
+            <View style={[styles.button, validForm ? {} : styleCustom.button]}>
               <Text style={styles.buttonText}>
                 {this.state.stageNew ? 'Registrar' : 'Entrar'}
               </Text>
@@ -125,7 +122,7 @@ export default class Auth extends Component {
           </TouchableOpacity>
         </View>
         <TouchableOpacity
-          style={{padding: 10}}
+          style={styleCustom.buttonLink}
           onPress={() => this.setState({stageNew: !this.state.stageNew})}>
           <Text style={styles.buttonText}>
             {this.state.stageNew
@@ -137,3 +134,12 @@ export default class Auth extends Component {
     );
   }
 }
+
+const styleCustom = {
+  button: {
+    backgroundColor: '#AAA',
+  },
+  buttonLink: {
+    padding: 10,
+  },
+};
